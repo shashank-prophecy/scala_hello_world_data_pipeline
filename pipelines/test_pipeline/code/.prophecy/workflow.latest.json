@@ -1,0 +1,236 @@
+{
+  "metainfo" : {
+    "migrationVersions" : {
+      "gemBuilderVersion" : "v1"
+    },
+    "functions" : { },
+    "codeGenConfiguration" : {
+      "editableConfig" : true,
+      "plibVersion" : {
+        "mavenVersion" : "8.2.1"
+      },
+      "sparkConfigJinjaEnabled" : true
+    },
+    "id" : "1",
+    "uri" : "pipelines/test_pipeline",
+    "pipelineSettingsInfo" : {
+      "applicationName" : "test_pipeline",
+      "hasApplication" : true,
+      "isFunctionsPackageDirDefined" : true
+    },
+    "language" : "scala",
+    "fabricId" : "3758",
+    "frontEndLanguage" : "sql",
+    "mode" : "batch",
+    "udfs" : {
+      "language" : "scala",
+      "udfs" : [ ],
+      "functionPackageName" : "shashankprophecyioteam.scalahelloworldatapipeline.functions",
+      "sharedFunctionPackageNames" : [ "io.prophecy.scalagems.functions", "io.prophecy.warehousegems.functions" ]
+    },
+    "udafs" : {
+      "language" : "scala",
+      "code" : "package udfs\n\nimport org.apache.spark.sql.expressions._\nimport org.apache.spark.sql.types._\nimport org.apache.spark.sql._\n\n/**\n  * Here you can define your custom aggregate functions.\n  *\n  * Make sure to register your `udafs` in the register_udafs function below.\n  *\n  * Example:\n  *\n  * object GeometricMean extends UserDefinedAggregateFunction {\n  *   // This is the input fields for your aggregate function.\n  *   override def inputSchema: org.apache.spark.sql.types.StructType =\n  *     StructType(StructField(\"value\", DoubleType) :: Nil)\n  *\n  *   // This is the internal fields you keep for computing your aggregate.\n  *   override def bufferSchema: StructType = StructType(\n  *     StructField(\"count\", LongType) ::\n  *     StructField(\"product\", DoubleType) :: Nil\n  *   )\n  *\n  *   // This is the output type of your aggregatation function.\n  *   override def dataType: DataType = DoubleType\n  *\n  *   override def deterministic: Boolean = true\n  *\n  *   // This is the initial value for your buffer schema.\n  *   override def initialize(buffer: MutableAggregationBuffer): Unit = {\n  *     buffer(0) = 0L\n  *     buffer(1) = 1.0\n  *   }\n  *\n  *   // This is how to update your buffer schema given an input.\n  *   override def update(buffer: MutableAggregationBuffer, input: Row): Unit = {\n  *     buffer(0) = buffer.getAs[Long](0) + 1\n  *     buffer(1) = buffer.getAs[Double](1) * input.getAs[Double](0)\n  *   }\n  *\n  *   // This is how to merge two objects with the bufferSchema type.\n  *   override def merge(buffer1: MutableAggregationBuffer, buffer2: Row): Unit = {\n  *     buffer1(0) = buffer1.getAs[Long](0) + buffer2.getAs[Long](0)\n  *     buffer1(1) = buffer1.getAs[Double](1) * buffer2.getAs[Double](1)\n  *   }\n  *\n  *   // This is where you output the final value, given the final value of your bufferSchema.\n  *   override def evaluate(buffer: Row): Any = {\n  *     math.pow(buffer.getDouble(1), 1.toDouble / buffer.getLong(0))\n  *   }\n  * }\n  *\n  */\n\n\nobject UDAFs {\n  /**\n    * Registers UDAFs with Spark SQL\n    */\n  def registerUDAFs(spark: SparkSession): Unit = {\n    /**\n      * Example:\n      *\n      * spark.udf.register(\"gm\", GeometricMean)\n      *\n      */\n\n\n  }\n}\n"
+    },
+    "configuration" : {
+      "common" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "oldCommon" : {
+        "type" : "record",
+        "fields" : [ ]
+      },
+      "fabrics" : { },
+      "instances" : { },
+      "selected" : "default",
+      "nonEditable" : [ ],
+      "isSubscribedPipelineWithPipelineConfigs" : false
+    },
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
+    "codeMode" : "sparse",
+    "buildSystem" : "maven",
+    "externalDependencies" : [ ],
+    "dependentProjectExternalDependencies" : [ {
+      "projectUID" : "12651",
+      "projectName" : "ProphecySparkBasicsScala",
+      "externalDependencies" : [ ]
+    }, {
+      "projectUID" : "12652",
+      "projectName" : "ProphecyWarehouseScala",
+      "externalDependencies" : [ ]
+    } ],
+    "isImported" : false,
+    "interimMode" : "Full",
+    "interimModeEnabled" : true,
+    "visualCodeInterimMode" : "Disabled",
+    "recordsLimit" : {
+      "enabled" : false,
+      "value" : 1000
+    },
+    "topLevelPackage" : "io.prophecy.pipelines.test_pipeline",
+    "configurationVersion" : "v2"
+  },
+  "connections" : [ {
+    "id" : "m7JedaIwQCSHg73J3wpDy$$tpWWwr5Y9jW9zhKyUVgrM",
+    "source" : "AXSGS5KI4S0u11XPWw-3E$$DCq_C9Yo-0Z-uJ5XbWag3",
+    "sourcePort" : "epDPbjcUJ6fs1DqG1k36D$$P5Y5mZdSxHVhmIrEDdk50",
+    "target" : "3tyadlOgRXZjFbiLqj4-b$$pVYkdkiVy2E_T-RTdc7y8",
+    "targetPort" : "ILP549G7Ue_3j5FNSzVn8$$4kMk_zoQkIfyyV7HBfw1e"
+  }, {
+    "id" : "SinzkFddbL2vs3-er0uSS$$Ai9qyfm_8h-t8gcFB9tX1",
+    "source" : "3tyadlOgRXZjFbiLqj4-b$$pVYkdkiVy2E_T-RTdc7y8",
+    "sourcePort" : "2vm0zHDYWIeOGxRercI3f$$neRGFslBdaBHZzngxupTE",
+    "target" : "r2Cry3_o2cYOQURVlYNvj$$3wJbA0RzDnCpvK_PSmSz0",
+    "targetPort" : "Zw8RN3XjVZ-o4UYWR40xB$$jWq8v6Rqy2z5c8HdlNtyp"
+  } ],
+  "processes" : {
+    "AXSGS5KI4S0u11XPWw-3E$$DCq_C9Yo-0Z-uJ5XbWag3" : {
+      "id" : "AXSGS5KI4S0u11XPWw-3E$$DCq_C9Yo-0Z-uJ5XbWag3",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "csv_read",
+        "slug" : "csv_read",
+        "x" : -440,
+        "y" : -180,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "epDPbjcUJ6fs1DqG1k36D$$P5Y5mZdSxHVhmIrEDdk50",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/csv_read"
+      }
+    },
+    "3tyadlOgRXZjFbiLqj4-b$$pVYkdkiVy2E_T-RTdc7y8" : {
+      "id" : "3tyadlOgRXZjFbiLqj4-b$$pVYkdkiVy2E_T-RTdc7y8",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "limit",
+        "slug" : "limit",
+        "x" : -240,
+        "y" : -180,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Retrieves a maximum of 10 records from the dataset for quick analysis.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "ILP549G7Ue_3j5FNSzVn8$$4kMk_zoQkIfyyV7HBfw1e",
+          "slug" : "in"
+        } ],
+        "outputs" : [ {
+          "id" : "2vm0zHDYWIeOGxRercI3f$$neRGFslBdaBHZzngxupTE",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "limit" : "10"
+      },
+      "componentInfo" : {
+        "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12651.git&subPath=&tag=0.2.5.5&projectSubscriptionProjectId=12651&path=gems/Limit",
+        "projectName" : "ProphecySparkBasicsScala"
+      }
+    },
+    "r2Cry3_o2cYOQURVlYNvj$$3wJbA0RzDnCpvK_PSmSz0" : {
+      "id" : "r2Cry3_o2cYOQURVlYNvj$$3wJbA0RzDnCpvK_PSmSz0",
+      "component" : "Target",
+      "metadata" : {
+        "label" : "csv_write",
+        "slug" : "csv_write",
+        "x" : -40,
+        "y" : -200,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "Zw8RN3XjVZ-o4UYWR40xB$$jWq8v6Rqy2z5c8HdlNtyp",
+          "slug" : "in"
+        } ],
+        "outputs" : [ ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/csv_write"
+      }
+    }
+  },
+  "ports" : {
+    "inputs" : [ ],
+    "outputs" : [ ],
+    "selectedInputFields" : [ ],
+    "isCustomOutputSchema" : false,
+    "autoUpdateOnRun" : false
+  },
+  "diagnostics" : [ {
+    "property" : "$.workflow.processes.AXSGS5KI4S0u11XPWw-3E$$DCq_C9Yo-0Z-uJ5XbWag3.properties.dataset.schema",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "Missing Schema. Please infer schema or provide it manually.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.3tyadlOgRXZjFbiLqj4-b$$pVYkdkiVy2E_T-RTdc7y8",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "One of the upstream gems is broken. Please, fix it first.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.r2Cry3_o2cYOQURVlYNvj$$3wJbA0RzDnCpvK_PSmSz0",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "One of the upstream gems is broken. Please, fix it first.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  } ]
+}
