@@ -15,9 +15,9 @@ import java.time._
 object Main {
 
   def apply(context: Context): Unit = {
-    val df_csv_read = csv_read(context)
-    val df_limit    = limit(context, df_csv_read)
-    csv_write(context, df_limit)
+    val df_csv_dat_read = csv_dat_read(context)
+    val df_limit        = limit(context, df_csv_dat_read)
+    csv_dat_write(context, df_limit)
   }
 
   def main(args: Array[String]): Unit = {
@@ -31,6 +31,9 @@ object Main {
       .getOrCreate()
     val context = Context(spark, config)
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/test_pipeline")
+    spark.conf.set("spark.hadoop.fs.s3a.endpoint",   "s3.us-west-2.amazonaws.com")
+    spark.conf
+      .set("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
     registerUDFs(spark)
     MetricsCollector.instrument(spark, "pipelines/test_pipeline") {
       apply(context)

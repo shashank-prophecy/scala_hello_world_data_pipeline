@@ -12,5 +12,5 @@ import org.apache.spark.sql.expressions._
 import java.time._
 
 object limit {
-  def apply(context: Context, in: DataFrame): DataFrame = in.limit(10)
+  def apply(context: Context, in: DataFrame): DataFrame = in.limit(2)
 }

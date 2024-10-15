@@ -1,0 +1,18 @@
+version: 1
+schema:
+  type: struct
+  fields:
+  - name: sj_code
+    type: string
+    nullable: true
+    metadata:
+      description: Unique code representing a specific job or service
+      mappings: []
+      tags: []
+  - name: sj_code_desc
+    type: string
+    nullable: true
+    metadata:
+      description: Description of the service job code
+      mappings: []
+      tags: []

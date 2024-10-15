@@ -19,7 +19,7 @@
       "isFunctionsPackageDirDefined" : true
     },
     "language" : "scala",
-    "fabricId" : "3758",
+    "fabricId" : "10061",
     "frontEndLanguage" : "sql",
     "mode" : "batch",
     "udfs" : {
@@ -47,7 +47,13 @@
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
-    "sparkConf" : [ ],
+    "sparkConf" : [ {
+      "name" : "spark.hadoop.fs.s3a.endpoint",
+      "value" : "s3.us-west-2.amazonaws.com"
+    }, {
+      "name" : "spark.hadoop.fs.s3a.impl",
+      "value" : "org.apache.hadoop.fs.s3a.S3AFileSystem"
+    } ],
     "hadoopConf" : [ ],
     "codeMode" : "sparse",
     "buildSystem" : "maven",
@@ -73,68 +79,38 @@
     "configurationVersion" : "v2"
   },
   "connections" : [ {
-    "id" : "m7JedaIwQCSHg73J3wpDy$$tpWWwr5Y9jW9zhKyUVgrM",
-    "source" : "AXSGS5KI4S0u11XPWw-3E$$DCq_C9Yo-0Z-uJ5XbWag3",
-    "sourcePort" : "epDPbjcUJ6fs1DqG1k36D$$P5Y5mZdSxHVhmIrEDdk50",
-    "target" : "3tyadlOgRXZjFbiLqj4-b$$pVYkdkiVy2E_T-RTdc7y8",
-    "targetPort" : "ILP549G7Ue_3j5FNSzVn8$$4kMk_zoQkIfyyV7HBfw1e"
+    "id" : "K7vDdQttWxM6w7dr2rcLq$$QilzDlhd8rXXpjMduTMB6",
+    "source" : "UMw-7Q-oLs_jyEMgXWxgb$$DOfOiJN9jYCprD-TTUlgw",
+    "sourcePort" : "RHJRAnwCkYNMLrRp3hiQ1$$oi0Ba3AMjUG09yOZxDgLV",
+    "target" : "5LAP1t7gBtFZcCJVKSsI_$$NVfzZTPbUy4SmAnjLTQ5v",
+    "targetPort" : "h2yMWhE8S_ePV5SFur-WX$$CGJkG7CLbx0dLmEhIbZ2t"
   }, {
-    "id" : "SinzkFddbL2vs3-er0uSS$$Ai9qyfm_8h-t8gcFB9tX1",
-    "source" : "3tyadlOgRXZjFbiLqj4-b$$pVYkdkiVy2E_T-RTdc7y8",
-    "sourcePort" : "2vm0zHDYWIeOGxRercI3f$$neRGFslBdaBHZzngxupTE",
-    "target" : "r2Cry3_o2cYOQURVlYNvj$$3wJbA0RzDnCpvK_PSmSz0",
-    "targetPort" : "Zw8RN3XjVZ-o4UYWR40xB$$jWq8v6Rqy2z5c8HdlNtyp"
+    "id" : "V9QNMlCKv1VReUz_bPGyG$$ykePLjhDjK7VXX-YiVD_p",
+    "source" : "5LAP1t7gBtFZcCJVKSsI_$$NVfzZTPbUy4SmAnjLTQ5v",
+    "sourcePort" : "POUbmHgD5OKm47pBcT6iV$$QY7EbsttNFOFU7xluX6xk",
+    "target" : "iVT3DZZZKhGyX5OsGKUmJ$$FArC4iqVVhhOIAXCnkDMR",
+    "targetPort" : "h4EHraSf3dxcyCvCzjIfj$$Gi05eEE6twLBRT1YhfYlN"
   } ],
   "processes" : {
-    "AXSGS5KI4S0u11XPWw-3E$$DCq_C9Yo-0Z-uJ5XbWag3" : {
-      "id" : "AXSGS5KI4S0u11XPWw-3E$$DCq_C9Yo-0Z-uJ5XbWag3",
+    "UMw-7Q-oLs_jyEMgXWxgb$$DOfOiJN9jYCprD-TTUlgw" : {
+      "id" : "UMw-7Q-oLs_jyEMgXWxgb$$DOfOiJN9jYCprD-TTUlgw",
       "component" : "Source",
       "metadata" : {
-        "label" : "csv_read",
-        "slug" : "csv_read",
-        "x" : -440,
-        "y" : -180,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "epDPbjcUJ6fs1DqG1k36D$$P5Y5mZdSxHVhmIrEDdk50",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "properties" : {
-        "datasetId" : "datasets/csv_read"
-      }
-    },
-    "3tyadlOgRXZjFbiLqj4-b$$pVYkdkiVy2E_T-RTdc7y8" : {
-      "id" : "3tyadlOgRXZjFbiLqj4-b$$pVYkdkiVy2E_T-RTdc7y8",
-      "component" : "Limit",
-      "metadata" : {
-        "label" : "limit",
-        "slug" : "limit",
-        "x" : -240,
-        "y" : -180,
+        "label" : "csv_dat_read",
+        "slug" : "csv_dat_read",
+        "x" : -560,
+        "y" : -300,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Retrieves a maximum of 10 records from the dataset for quick analysis.",
+        "comment" : "Loads data from a specified file in a structured format, enabling further analysis and processing of customer-related information.",
         "autoUpdateComment" : true
       },
       "ports" : {
-        "inputs" : [ {
-          "id" : "ILP549G7Ue_3j5FNSzVn8$$4kMk_zoQkIfyyV7HBfw1e",
-          "slug" : "in"
-        } ],
+        "inputs" : [ ],
         "outputs" : [ {
-          "id" : "2vm0zHDYWIeOGxRercI3f$$neRGFslBdaBHZzngxupTE",
+          "id" : "RHJRAnwCkYNMLrRp3hiQ1$$oi0Ba3AMjUG09yOZxDgLV",
           "slug" : "out"
         } ],
         "selectedInputFields" : [ ],
@@ -142,30 +118,110 @@
         "autoUpdateOnRun" : false
       },
       "properties" : {
-        "limit" : "10"
+        "datasetId" : "datasets/csv_dat_read"
+      }
+    },
+    "5LAP1t7gBtFZcCJVKSsI_$$NVfzZTPbUy4SmAnjLTQ5v" : {
+      "id" : "5LAP1t7gBtFZcCJVKSsI_$$NVfzZTPbUy4SmAnjLTQ5v",
+      "component" : "Limit",
+      "metadata" : {
+        "label" : "limit",
+        "slug" : "limit",
+        "x" : -340,
+        "y" : -300,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false,
+        "comment" : "Restricts the dataset to the top two entries for quick analysis.",
+        "autoUpdateComment" : true
+      },
+      "ports" : {
+        "inputs" : [ {
+          "id" : "h2yMWhE8S_ePV5SFur-WX$$CGJkG7CLbx0dLmEhIbZ2t",
+          "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "sj_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique code representing a specific job or service",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sj_code_desc",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Description of the service job code",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
+        } ],
+        "outputs" : [ {
+          "id" : "POUbmHgD5OKm47pBcT6iV$$QY7EbsttNFOFU7xluX6xk",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "limit" : "2"
       },
       "componentInfo" : {
         "gemId" : "gitUri=http://gitserver:3000/DxEheDCJ_team_5751/DxEheDCJ_project_12651.git&subPath=&tag=0.2.5.5&projectSubscriptionProjectId=12651&path=gems/Limit",
         "projectName" : "ProphecySparkBasicsScala"
       }
     },
-    "r2Cry3_o2cYOQURVlYNvj$$3wJbA0RzDnCpvK_PSmSz0" : {
-      "id" : "r2Cry3_o2cYOQURVlYNvj$$3wJbA0RzDnCpvK_PSmSz0",
+    "iVT3DZZZKhGyX5OsGKUmJ$$FArC4iqVVhhOIAXCnkDMR" : {
+      "id" : "iVT3DZZZKhGyX5OsGKUmJ$$FArC4iqVVhhOIAXCnkDMR",
       "component" : "Target",
       "metadata" : {
-        "label" : "csv_write",
-        "slug" : "csv_write",
-        "x" : -40,
-        "y" : -200,
+        "label" : "csv_dat_write",
+        "slug" : "csv_dat_write",
+        "x" : -120,
+        "y" : -300,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
-        "isImported" : false
+        "isImported" : false,
+        "comment" : "Exports data to a CSV file for further analysis or reporting, ensuring the output is easily accessible and organized.",
+        "autoUpdateComment" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "Zw8RN3XjVZ-o4UYWR40xB$$jWq8v6Rqy2z5c8HdlNtyp",
-          "slug" : "in"
+          "id" : "h4EHraSf3dxcyCvCzjIfj$$Gi05eEE6twLBRT1YhfYlN",
+          "slug" : "in",
+          "schema" : {
+            "type" : "struct",
+            "fields" : [ {
+              "name" : "sj_code",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Unique code representing a specific job or service",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            }, {
+              "name" : "sj_code_desc",
+              "type" : "string",
+              "nullable" : true,
+              "metadata" : {
+                "description" : "Description of the service job code",
+                "mappings" : [ ],
+                "tags" : [ ]
+              }
+            } ]
+          },
+          "isStreaming" : false
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
@@ -173,7 +229,7 @@
         "autoUpdateOnRun" : false
       },
       "properties" : {
-        "datasetId" : "datasets/csv_write"
+        "datasetId" : "datasets/csv_dat_write"
       }
     }
   },
@@ -183,54 +239,5 @@
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false,
     "autoUpdateOnRun" : false
-  },
-  "diagnostics" : [ {
-    "property" : "$.workflow.processes.AXSGS5KI4S0u11XPWw-3E$$DCq_C9Yo-0Z-uJ5XbWag3.properties.dataset.schema",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "Missing Schema. Please infer schema or provide it manually.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.3tyadlOgRXZjFbiLqj4-b$$pVYkdkiVy2E_T-RTdc7y8",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "One of the upstream gems is broken. Please, fix it first.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  }, {
-    "property" : "$.workflow.processes.r2Cry3_o2cYOQURVlYNvj$$3wJbA0RzDnCpvK_PSmSz0",
-    "range" : {
-      "start" : {
-        "line" : 0,
-        "character" : 0
-      },
-      "end" : {
-        "line" : 0,
-        "character" : 0
-      }
-    },
-    "severity" : 2,
-    "message" : "One of the upstream gems is broken. Please, fix it first.",
-    "tags" : [ ],
-    "relatedInformation" : [ ]
-  } ]
+  }
 }

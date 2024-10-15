@@ -9,14 +9,14 @@ import org.apache.spark.sql.types._
 import org.apache.spark.sql.expressions._
 import java.time._
 
-object csv_write {
+object csv_dat_write {
 
   def apply(context: Context, in: DataFrame): Unit =
     in.write
       .format("csv")
       .option("header", true)
-      .option("sep",    ",")
-      .mode("error")
-      .save("gs://bigquery-temp-demo/final_data/customer_output.csv")
+      .option("sep",    "\u0001")
+      .mode("overwrite")
+      .save("s3a://shashank-test-prophecy/test_data_output.dat")
 
 }

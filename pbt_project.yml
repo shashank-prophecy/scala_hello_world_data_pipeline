@@ -21,38 +21,38 @@ pipelines:
     createdAt: '2024-10-08 07:42:37'
     datasets:
       inputs:
-      - datasets/csv_read
+      - datasets/csv_dat_read
       outputs:
-      - datasets/csv_write
+      - datasets/csv_dat_write
     subgraphs: []
     dependencies: {}
 datasets:
-  datasets/csv_read:
-    name: csv_read
+  datasets/csv_dat_read:
+    name: csv_dat_read
     description: ''
     author: shashank@prophecy.io
-    createdAt: '2024-10-08 07:43:14'
+    createdAt: '2024-10-15 05:27:41'
     mode: batch
     physicalDatasets:
-      EvernorthUnityFabric:
-        fabricId: 3758
+      dev:
+        fabricId: 10061
         datasetType: File
         description: ''
         author: shashank@prophecy.io
-        createdAt: '2024-10-08 07:43:14'
-  datasets/csv_write:
-    name: csv_write
+        createdAt: '2024-10-15 05:27:41'
+  datasets/csv_dat_write:
+    name: csv_dat_write
     description: ''
     author: shashank@prophecy.io
-    createdAt: '2024-10-08 07:43:57'
+    createdAt: '2024-10-15 06:04:44'
     mode: batch
     physicalDatasets:
-      EvernorthUnityFabric:
-        fabricId: 3758
+      dev:
+        fabricId: 10061
         datasetType: File
         description: ''
         author: shashank@prophecy.io
-        createdAt: '2024-10-08 07:43:57'
+        createdAt: '2024-10-15 06:04:44'
 templates: {}
 jobs: {}
 gemContainer:
@@ -84,6 +84,32 @@ dependencies:
   id: '608224937'
   createdAt: '2024-10-08T07:42:37.783673Z'
   type: plibMaven
+  enabled: true
+  entity: Project
+- description: ''
+  id: hXTrEaU-4AQHtCRZOkcXH
+  editable: true
+  enabled: true
+  coordinates: com.amazonaws:aws-java-sdk:1.12.767
+  type: coordinates
+  name: aws-sdk
+  scope: Project
+  exclusions: []
+  entity: Project
+  modifiedAt: '2024-10-15T07:39:44.254Z'
+  createdAt: '2024-10-15T07:39:44.254Z'
+- description: ''
+  id: vPGqRMeY3_h4GfAAsNU5T
+  editable: true
+  enabled: true
+  coordinates: org.apache.hadoop:hadoop-aws:3.4.0
+  type: coordinates
+  name: hadoop-aws
+  scope: Project
+  exclusions: []
+  entity: Project
+  modifiedAt: '2024-10-15T07:40:19.689Z'
+  createdAt: '2024-10-15T07:40:19.689Z'
 projectDependencies:
   '12651':
     projectUID: 12651
