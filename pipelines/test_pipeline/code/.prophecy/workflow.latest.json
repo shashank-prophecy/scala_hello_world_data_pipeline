@@ -54,7 +54,13 @@
       "name" : "spark.hadoop.fs.s3a.impl",
       "value" : "org.apache.hadoop.fs.s3a.S3AFileSystem"
     } ],
-    "hadoopConf" : [ ],
+    "hadoopConf" : [ {
+      "name" : "fs.s3a.access.key",
+      "value" : "*****"
+    }, {
+      "name" : "fs.s3a.secret.key",
+      "value" : "*****"
+    } ],
     "codeMode" : "sparse",
     "buildSystem" : "maven",
     "externalDependencies" : [ ],

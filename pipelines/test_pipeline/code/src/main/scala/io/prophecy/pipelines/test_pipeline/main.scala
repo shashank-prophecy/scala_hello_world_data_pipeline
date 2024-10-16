@@ -33,7 +33,9 @@ object Main {
     spark.conf.set("prophecy.metadata.pipeline.uri", "pipelines/test_pipeline")
     spark.conf.set("spark.hadoop.fs.s3a.endpoint",   "s3.us-west-2.amazonaws.com")
     spark.conf
-      .set("spark.hadoop.fs.s3a.impl", "org.apache.hadoop.fs.s3a.S3AFileSystem")
+      .set("spark.hadoop.fs.s3a.impl",                              "org.apache.hadoop.fs.s3a.S3AFileSystem")
+    spark.sparkContext.hadoopConfiguration.set("fs.s3a.access.key", "*****")
+    spark.sparkContext.hadoopConfiguration.set("fs.s3a.secret.key", "*****")
     registerUDFs(spark)
     MetricsCollector.instrument(spark, "pipelines/test_pipeline") {
       apply(context)
