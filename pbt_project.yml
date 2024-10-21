@@ -21,17 +21,17 @@ pipelines:
     createdAt: '2024-10-08 07:42:37'
     datasets:
       inputs:
-      - datasets/csv_dat_read
+      - datasets/gs_csv_read
       outputs:
-      - datasets/csv_dat_write
+      - datasets/gs_csv_write
     subgraphs: []
     dependencies: {}
 datasets:
-  datasets/csv_dat_read:
-    name: csv_dat_read
+  datasets/gs_csv_read:
+    name: gs_csv_read
     description: ''
     author: shashank@prophecy.io
-    createdAt: '2024-10-15 05:27:41'
+    createdAt: '2024-10-21 05:44:57'
     mode: batch
     physicalDatasets:
       dev:
@@ -39,12 +39,12 @@ datasets:
         datasetType: File
         description: ''
         author: shashank@prophecy.io
-        createdAt: '2024-10-15 05:27:41'
-  datasets/csv_dat_write:
-    name: csv_dat_write
+        createdAt: '2024-10-21 05:44:57'
+  datasets/gs_csv_write:
+    name: gs_csv_write
     description: ''
     author: shashank@prophecy.io
-    createdAt: '2024-10-15 06:04:44'
+    createdAt: '2024-10-21 05:45:33'
     mode: batch
     physicalDatasets:
       dev:
@@ -52,7 +52,7 @@ datasets:
         datasetType: File
         description: ''
         author: shashank@prophecy.io
-        createdAt: '2024-10-15 06:04:44'
+        createdAt: '2024-10-21 05:45:33'
 templates: {}
 jobs: {}
 gemContainer:
@@ -86,30 +86,6 @@ dependencies:
   type: plibMaven
   enabled: true
   entity: Project
-- description: ''
-  id: hXTrEaU-4AQHtCRZOkcXH
-  editable: true
-  enabled: true
-  coordinates: com.amazonaws:aws-java-sdk:1.12.767
-  type: coordinates
-  name: aws-sdk
-  scope: Project
-  exclusions: []
-  entity: Project
-  modifiedAt: '2024-10-15T07:39:44.254Z'
-  createdAt: '2024-10-15T07:39:44.254Z'
-- description: ''
-  id: vPGqRMeY3_h4GfAAsNU5T
-  editable: true
-  enabled: true
-  coordinates: org.apache.hadoop:hadoop-aws:3.4.0
-  type: coordinates
-  name: hadoop-aws
-  scope: Project
-  exclusions: []
-  entity: Project
-  modifiedAt: '2024-10-15T07:40:19.689Z'
-  createdAt: '2024-10-15T07:40:19.689Z'
 projectDependencies:
   '12651':
     projectUID: 12651

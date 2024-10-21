@@ -47,20 +47,8 @@
       "nonEditable" : [ ],
       "isSubscribedPipelineWithPipelineConfigs" : false
     },
-    "sparkConf" : [ {
-      "name" : "spark.hadoop.fs.s3a.endpoint",
-      "value" : "s3.us-west-2.amazonaws.com"
-    }, {
-      "name" : "spark.hadoop.fs.s3a.impl",
-      "value" : "org.apache.hadoop.fs.s3a.S3AFileSystem"
-    } ],
-    "hadoopConf" : [ {
-      "name" : "fs.s3a.access.key",
-      "value" : "*****"
-    }, {
-      "name" : "fs.s3a.secret.key",
-      "value" : "*****"
-    } ],
+    "sparkConf" : [ ],
+    "hadoopConf" : [ ],
     "codeMode" : "sparse",
     "buildSystem" : "maven",
     "externalDependencies" : [ ],
@@ -85,48 +73,19 @@
     "configurationVersion" : "v2"
   },
   "connections" : [ {
-    "id" : "K7vDdQttWxM6w7dr2rcLq$$QilzDlhd8rXXpjMduTMB6",
-    "source" : "UMw-7Q-oLs_jyEMgXWxgb$$DOfOiJN9jYCprD-TTUlgw",
-    "sourcePort" : "RHJRAnwCkYNMLrRp3hiQ1$$oi0Ba3AMjUG09yOZxDgLV",
+    "id" : "mOTeA6MvtloMtXDiEuv-l$$4Ol7HR_Qx-7HSpETkuZUD",
+    "source" : "qHkikQoXhjGlpXSCGrA0Y$$XMLCYLjK4uzA9lgzUSUgY",
+    "sourcePort" : "_HphM_5-Oe2CZKis1J-c_$$vHwu_FqBs27ojaT9zz3qJ",
     "target" : "5LAP1t7gBtFZcCJVKSsI_$$NVfzZTPbUy4SmAnjLTQ5v",
     "targetPort" : "h2yMWhE8S_ePV5SFur-WX$$CGJkG7CLbx0dLmEhIbZ2t"
   }, {
-    "id" : "V9QNMlCKv1VReUz_bPGyG$$ykePLjhDjK7VXX-YiVD_p",
+    "id" : "pgIJ3Wn9BB-kY0h25Crgq$$al_BjJn3yoD1R_ZvEsaZY",
     "source" : "5LAP1t7gBtFZcCJVKSsI_$$NVfzZTPbUy4SmAnjLTQ5v",
     "sourcePort" : "POUbmHgD5OKm47pBcT6iV$$QY7EbsttNFOFU7xluX6xk",
-    "target" : "iVT3DZZZKhGyX5OsGKUmJ$$FArC4iqVVhhOIAXCnkDMR",
-    "targetPort" : "h4EHraSf3dxcyCvCzjIfj$$Gi05eEE6twLBRT1YhfYlN"
+    "target" : "mwYyfg5H7oO29J2boOTFy$$sZcNojIU_g_8sTJ1tndoz",
+    "targetPort" : "iOl_6udlexVnecE9zmt_A$$J7vL8R4CYCaLtyM1uweGX"
   } ],
   "processes" : {
-    "UMw-7Q-oLs_jyEMgXWxgb$$DOfOiJN9jYCprD-TTUlgw" : {
-      "id" : "UMw-7Q-oLs_jyEMgXWxgb$$DOfOiJN9jYCprD-TTUlgw",
-      "component" : "Source",
-      "metadata" : {
-        "label" : "csv_dat_read",
-        "slug" : "csv_dat_read",
-        "x" : -560,
-        "y" : -300,
-        "phase" : 0,
-        "cache" : false,
-        "detailedStats" : false,
-        "isImported" : false,
-        "comment" : "Loads data from a specified file in a structured format, enabling further analysis and processing of customer-related information.",
-        "autoUpdateComment" : true
-      },
-      "ports" : {
-        "inputs" : [ ],
-        "outputs" : [ {
-          "id" : "RHJRAnwCkYNMLrRp3hiQ1$$oi0Ba3AMjUG09yOZxDgLV",
-          "slug" : "out"
-        } ],
-        "selectedInputFields" : [ ],
-        "isCustomOutputSchema" : false,
-        "autoUpdateOnRun" : false
-      },
-      "properties" : {
-        "datasetId" : "datasets/csv_dat_read"
-      }
-    },
     "5LAP1t7gBtFZcCJVKSsI_$$NVfzZTPbUy4SmAnjLTQ5v" : {
       "id" : "5LAP1t7gBtFZcCJVKSsI_$$NVfzZTPbUy4SmAnjLTQ5v",
       "component" : "Limit",
@@ -145,30 +104,7 @@
       "ports" : {
         "inputs" : [ {
           "id" : "h2yMWhE8S_ePV5SFur-WX$$CGJkG7CLbx0dLmEhIbZ2t",
-          "slug" : "in",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "sj_code",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "Unique code representing a specific job or service",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "sj_code_desc",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "Description of the service job code",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
+          "slug" : "in"
         } ],
         "outputs" : [ {
           "id" : "POUbmHgD5OKm47pBcT6iV$$QY7EbsttNFOFU7xluX6xk",
@@ -186,48 +122,52 @@
         "projectName" : "ProphecySparkBasicsScala"
       }
     },
-    "iVT3DZZZKhGyX5OsGKUmJ$$FArC4iqVVhhOIAXCnkDMR" : {
-      "id" : "iVT3DZZZKhGyX5OsGKUmJ$$FArC4iqVVhhOIAXCnkDMR",
+    "qHkikQoXhjGlpXSCGrA0Y$$XMLCYLjK4uzA9lgzUSUgY" : {
+      "id" : "qHkikQoXhjGlpXSCGrA0Y$$XMLCYLjK4uzA9lgzUSUgY",
+      "component" : "Source",
+      "metadata" : {
+        "label" : "gs_csv_read",
+        "slug" : "gs_csv_read",
+        "x" : -520,
+        "y" : -300,
+        "phase" : 0,
+        "cache" : false,
+        "detailedStats" : false,
+        "isImported" : false
+      },
+      "ports" : {
+        "inputs" : [ ],
+        "outputs" : [ {
+          "id" : "_HphM_5-Oe2CZKis1J-c_$$vHwu_FqBs27ojaT9zz3qJ",
+          "slug" : "out"
+        } ],
+        "selectedInputFields" : [ ],
+        "isCustomOutputSchema" : false,
+        "autoUpdateOnRun" : false
+      },
+      "properties" : {
+        "datasetId" : "datasets/gs_csv_read"
+      }
+    },
+    "mwYyfg5H7oO29J2boOTFy$$sZcNojIU_g_8sTJ1tndoz" : {
+      "id" : "mwYyfg5H7oO29J2boOTFy$$sZcNojIU_g_8sTJ1tndoz",
       "component" : "Target",
       "metadata" : {
-        "label" : "csv_dat_write",
-        "slug" : "csv_dat_write",
-        "x" : -120,
+        "label" : "gs_csv_write",
+        "slug" : "gs_csv_write",
+        "x" : -160,
         "y" : -300,
         "phase" : 0,
         "cache" : false,
         "detailedStats" : false,
         "isImported" : false,
-        "comment" : "Exports data to a CSV file for further analysis or reporting, ensuring the output is easily accessible and organized.",
+        "comment" : "Exports customer data to a CSV file for further analysis or reporting.",
         "autoUpdateComment" : true
       },
       "ports" : {
         "inputs" : [ {
-          "id" : "h4EHraSf3dxcyCvCzjIfj$$Gi05eEE6twLBRT1YhfYlN",
-          "slug" : "in",
-          "schema" : {
-            "type" : "struct",
-            "fields" : [ {
-              "name" : "sj_code",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "Unique code representing a specific job or service",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            }, {
-              "name" : "sj_code_desc",
-              "type" : "string",
-              "nullable" : true,
-              "metadata" : {
-                "description" : "Description of the service job code",
-                "mappings" : [ ],
-                "tags" : [ ]
-              }
-            } ]
-          },
-          "isStreaming" : false
+          "id" : "iOl_6udlexVnecE9zmt_A$$J7vL8R4CYCaLtyM1uweGX",
+          "slug" : "in"
         } ],
         "outputs" : [ ],
         "selectedInputFields" : [ ],
@@ -235,7 +175,7 @@
         "autoUpdateOnRun" : false
       },
       "properties" : {
-        "datasetId" : "datasets/csv_dat_write"
+        "datasetId" : "datasets/gs_csv_write"
       }
     }
   },
@@ -245,5 +185,54 @@
     "selectedInputFields" : [ ],
     "isCustomOutputSchema" : false,
     "autoUpdateOnRun" : false
-  }
+  },
+  "diagnostics" : [ {
+    "property" : "$.workflow.processes.qHkikQoXhjGlpXSCGrA0Y$$XMLCYLjK4uzA9lgzUSUgY.properties.dataset.schema",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "Missing Schema. Please infer schema or provide it manually.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.5LAP1t7gBtFZcCJVKSsI_$$NVfzZTPbUy4SmAnjLTQ5v",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "One of the upstream gems is broken. Please, fix it first.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  }, {
+    "property" : "$.workflow.processes.mwYyfg5H7oO29J2boOTFy$$sZcNojIU_g_8sTJ1tndoz",
+    "range" : {
+      "start" : {
+        "line" : 0,
+        "character" : 0
+      },
+      "end" : {
+        "line" : 0,
+        "character" : 0
+      }
+    },
+    "severity" : 2,
+    "message" : "One of the upstream gems is broken. Please, fix it first.",
+    "tags" : [ ],
+    "relatedInformation" : [ ]
+  } ]
 }

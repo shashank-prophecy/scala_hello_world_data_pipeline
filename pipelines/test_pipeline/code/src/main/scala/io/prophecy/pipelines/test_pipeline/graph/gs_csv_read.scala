@@ -9,14 +9,13 @@ import org.apache.spark.sql.types._
 import org.apache.spark.sql.expressions._
 import java.time._
 
-object csv_dat_write {
+object gs_csv_read {
 
-  def apply(context: Context, in: DataFrame): Unit =
-    in.write
+  def apply(context: Context): DataFrame =
+    context.spark.read
       .format("csv")
       .option("header", true)
-      .option("sep",    "\u0001")
-      .mode("overwrite")
-      .save("s3a://shashank-test-prophecy/test_data_output.dat")
+      .option("sep",    ",")
+      .load("gs://bigquery-temp-demo/input_data/CustomersDatasetInput.csv")
 
 }
